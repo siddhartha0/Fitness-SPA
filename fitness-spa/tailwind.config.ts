@@ -17,6 +17,7 @@ export default {
         "darkish-bg": "#1D1D27",
         "fadish-dark-bg": "#36353A",
         "div-bg": "#4C4A57",
+        "fadish-grey": "#A0A0A1",
       },
     },
   },
