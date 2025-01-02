@@ -7,8 +7,7 @@ import {
   Reasoning,
   Pricing,
 } from "@/components/home/";
-import { Navbar } from "@/components/shared/";
-import Footer from "@/components/shared/Footer";
+import { Navbar, Footer } from "@/components/shared/";
 
 export default function Home() {
   return (

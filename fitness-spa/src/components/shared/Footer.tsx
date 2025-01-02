@@ -112,7 +112,7 @@ const footerData = {
   ],
 };
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <footer className="bg-fadish-dark text-white px-28 py-20 ">
       <div className="container mx-auto ">
@@ -238,4 +238,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
