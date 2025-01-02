@@ -48,9 +48,30 @@ export const Reasoning = () => {
           join today
         </button>
       </section>
-      <section className="relative w-[450px] h-[450px]">
-        <Image src="/hero.jpg" alt="hero" fill className="object-cover" />
-      </section>
+      <div className="bg-orange rounded-full relative">
+        <section className="relative w-[450px] h-[450px]">
+          <Image src="/trainer.png" alt="hero" fill className="object-cover" />
+        </section>
+        <section className="bg-white flex place-items-center absolute bottom-4 rounded-lg gap-3 p-3">
+          <Icon icon="noto:fire" fontSize={28} />
+          <div className="flex flex-col text-black">
+            <p className="font-bold">24%</p>
+            <p className="font-semibold text-gray-500">Fat Burning</p>
+          </div>
+        </section>
+
+        <section className="bg-white flex place-items-center absolute top-20 right-10 rounded-lg gap-3 p-3">
+          <Icon
+            icon="solar:heart-pulse-2-broken"
+            className="text-red"
+            fontSize={28}
+          />
+          <div className="flex flex-col text-black">
+            <p className="font-bold">70 bpm</p>
+            <p className="font-semibold text-gray-500">Heart Rate</p>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

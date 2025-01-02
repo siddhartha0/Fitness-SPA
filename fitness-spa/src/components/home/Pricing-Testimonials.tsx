@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Testimonial } from "./Testimonial";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import Image from "next/image";
 
 const pricingData = [
   {
@@ -128,6 +129,15 @@ export const Pricing = () => {
             absolutely love it! The trainers are so motivate and they really
             help to reach fitness goals.
           </p>
+
+          <div className="w-[210px] h-[100px] relative">
+            <Image
+              src="/trustpilot.png"
+              alt="partners"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
         <div className="w-[38%] ">
           <Testimonial

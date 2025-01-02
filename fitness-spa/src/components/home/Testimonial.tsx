@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react/dist/iconify.js";
 import Image from "next/image";
 
 interface testimonialPropTypes {
@@ -16,7 +17,7 @@ export const Testimonial = ({
   star,
 }: testimonialPropTypes) => {
   return (
-    <div className="flex flex-col gap-3 bg-fadish-brown rounded-lg p-5 ">
+    <div className="flex flex-col gap-3 bg-fadish-brown rounded-lg p-8 ">
       <section className="flex place-items-center gap-3">
         <div className="relative w-[80px] h-[80px] ">
           <Image
@@ -31,9 +32,16 @@ export const Testimonial = ({
           <p className="text-sm">{clientMoral}</p>
         </div>
       </section>
-      {Array.of(star).map((_, index) => (
-        <div key={index} className="bg-yellow"></div>
-      ))}
+      <div className="flex ">
+        {Array.from({ length: star }).map((_, index) => (
+          <Icon
+            icon="material-symbols:star"
+            key={index}
+            className="text-yellow"
+            fontSize={24}
+          />
+        ))}
+      </div>
       <p>{clientFeedback}</p>
     </div>
   );
