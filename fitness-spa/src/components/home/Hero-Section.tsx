@@ -96,7 +96,7 @@ export const HeroSection = () => {
             />
           </section>
         </div>
-        <div className="w-[580px] h-[630px]">
+        <div className="w-[510px] h-[630px]">
           <Image src="/hero.png" alt="hero" fill className="" />
         </div>
       </section>
