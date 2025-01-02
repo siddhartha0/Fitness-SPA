@@ -12,8 +12,8 @@ const navbarData = [
   },
   {
     id: 2,
-    title: "About us",
-    path: "#",
+    title: "css Challenge",
+    path: "/css-challenge",
   },
   {
     id: 3,

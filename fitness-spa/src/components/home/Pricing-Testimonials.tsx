@@ -9,7 +9,7 @@ const pricingData = [
   {
     id: 1,
     title: "Discover",
-    price: "$99",
+    price: 99,
     usage: "per month",
     content: [
       "5 classes per month",
@@ -21,7 +21,7 @@ const pricingData = [
   {
     id: 2,
     title: "Enterprise",
-    price: "$299",
+    price: 299,
     usage: "per month",
     content: [
       "10 classes per month",
@@ -34,7 +34,7 @@ const pricingData = [
   {
     id: 3,
     title: "Professional",
-    price: "$199",
+    price: 99,
     usage: "per month",
     content: [
       "7 classes per month",
@@ -95,6 +95,7 @@ const reviewers = [
 
 export const Pricing = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentUsage, setCurrentUsage] = useState("monthly");
 
   const nextTestimonial = () => {
     if (currentIndex !== testimonialData.length - 1) {
@@ -120,8 +121,22 @@ export const Pricing = () => {
         </p>
 
         <div className="flex  text-center justify-center gap-4 border-2 border-darkish-red  w-fit  rounded-full m-auto ">
-          <p className="bg-darkish-red py-3 px-6 rounded-full">Monthly</p>
-          <p className="py-3 px-6">Annual</p>
+          <p
+            className={`${
+              currentUsage === "monthly" ? "bg-darkish-red " : ""
+            }py-3 px-6 rounded-full cursor-pointer`}
+            onClick={() => setCurrentUsage("monthly")}
+          >
+            Monthly
+          </p>
+          <p
+            className={`${
+              currentUsage === "annually" ? "bg-darkish-red " : ""
+            }py-3 px-6 rounded-full cursor-pointer`}
+            onClick={() => setCurrentUsage("annually")}
+          >
+            Annual
+          </p>
         </div>
 
         <div className="flex place-items-center justify-center gap-8 cursor-pointer">
@@ -134,7 +149,10 @@ export const Pricing = () => {
             >
               <p className="text-center uppercase text-base">{pricing.title}</p>
               <label className="font-bold text-[32px] flex place-items-center gap-1">
-                {pricing.price}
+                ${" "}
+                {currentUsage === "monthly"
+                  ? pricing.price
+                  : pricing.price * 12}
                 <p className="font-normal text-base">/ {pricing.usage}</p>
               </label>
               <div className="flex flex-col gap-4">

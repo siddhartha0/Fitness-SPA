@@ -24,6 +24,8 @@ export default {
         yellow: "#FEC006",
         "fadish-grey": "#A0A0A1",
         "darkish-red": "#FD2331",
+        "fadish-orange": "#E7AA6C",
+        "fadish-cyan": "#E8EAEB",
       },
     },
   },
