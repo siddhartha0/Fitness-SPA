@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react/dist/iconify.js";
 import Image from "next/image";
 
 export const Banner = () => {
@@ -10,6 +11,17 @@ export const Banner = () => {
           fill
           className="rounded-xl object-cover"
         />
+        <div className="bg-white py-2 px-6 absolute -right-20 bottom-10 rounded-lg flex place-items-center gap-3">
+          <Icon
+            icon="guidance:weightlifting"
+            fontSize={30}
+            className="text-orange"
+          />
+          <div className="flex flex-col">
+            <span className="text-black font-bold">Professional </span>
+            <span className="text-black font-bold"> Trainer</span>
+          </div>
+        </div>
       </section>
       <section className="flex flex-col gap-6 w-[30%]">
         <p className="capitalize font-bold text-[36px]">
