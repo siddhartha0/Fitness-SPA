@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Testimonial } from "./Testimonial";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Image from "next/image";
+import Head from "next/head";
 
 const pricingData = [
   {
@@ -112,153 +113,171 @@ export const Pricing = () => {
   };
 
   return (
-    <div className="bg-fade-dark-bg flex flex-col px-28 py-16 gap-20 ">
-      <section className="flex flex-col gap-8 text-center">
-        <p className="capitalize font-bold text-[32px]">choose the best plan</p>
-        <p>
-          {`choose a plan that's right for your growing team. Simple pricing & No
+    <>
+      <Head>
+        <title>Choose the Best Plan | Fitness Within</title>
+        <meta
+          name="description"
+          content="Explore our pricing plans. Simple pricing with no hidden charges. Choose the right plan for your fitness goals."
+        />
+        <meta property="og:title" content="Pricing Plans - Fitness Within" />
+        <meta
+          property="og:description"
+          content="Choose a fitness plan that works for you. Discover our monthly and annual plans with flexible options."
+        />
+      </Head>
+      <div className="bg-fade-dark-bg flex flex-col px-28 py-16 gap-20 ">
+        <section className="flex flex-col gap-8 text-center">
+          <p className="capitalize font-bold text-[32px]">
+            choose the best plan
+          </p>
+          <p>
+            {`choose a plan that's right for your growing team. Simple pricing & No
           hidden charges.`}
-        </p>
-
-        <div className="flex  text-center justify-center gap-4 border-2 border-darkish-red  w-fit  rounded-full m-auto ">
-          <p
-            className={`${
-              currentUsage === "monthly" ? "bg-darkish-red " : ""
-            }py-3 px-6 rounded-full cursor-pointer`}
-            onClick={() => setCurrentUsage("monthly")}
-          >
-            Monthly
           </p>
-          <p
-            className={`${
-              currentUsage === "annually" ? "bg-darkish-red " : ""
-            }py-3 px-6 rounded-full cursor-pointer`}
-            onClick={() => setCurrentUsage("annually")}
-          >
-            Annual
-          </p>
-        </div>
 
-        <div className="flex place-items-center justify-center gap-8 cursor-pointer">
-          {pricingData.map((pricing) => (
-            <section
-              key={pricing.id}
-              className={`flex flex-col gap-8 ${
-                pricing.id === 2 ? "bg-orange" : "bg-fadish-brown"
-              } px-20 py-8 rounded-lg`}
+          <div className="flex  text-center justify-center gap-4 border-2 border-darkish-red  w-fit  rounded-full m-auto ">
+            <p
+              className={`${
+                currentUsage === "monthly" ? "bg-darkish-red " : ""
+              }py-3 px-6 rounded-full cursor-pointer`}
+              onClick={() => setCurrentUsage("monthly")}
             >
-              <p className="text-center uppercase text-base">{pricing.title}</p>
-              <label className="font-bold text-[32px] flex place-items-center gap-1">
-                ${" "}
-                {currentUsage === "monthly"
-                  ? pricing.price
-                  : pricing.price * 12}
-                <p className="font-normal text-base">/ {pricing.usage}</p>
-              </label>
-              <div className="flex flex-col gap-4">
-                {pricing.content.map((content, index) => (
-                  <section
-                    key={index}
-                    className="flex place-items-center gap-2"
-                  >
-                    <Icon icon="charm:tick" width={28} fontSize={24} />
-                    <p className="text-sm text-start">{content}</p>
-                  </section>
-                ))}
-              </div>
-              <button
-                className={`border border-white rounded-full ${
-                  pricing.id === 2 ? "bg-white text-orange" : ""
-                } p-3 capitalize`}
-              >
-                choose plan
-              </button>
-            </section>
-          ))}
-        </div>
-      </section>
+              Monthly
+            </p>
+            <p
+              className={`${
+                currentUsage === "annually" ? "bg-darkish-red " : ""
+              }py-3 px-6 rounded-full cursor-pointer`}
+              onClick={() => setCurrentUsage("annually")}
+            >
+              Annual
+            </p>
+          </div>
 
-      <section className="flex justify-between relative">
-        <div className="flex flex-col gap-6 ">
-          <p className="text-[32px] font-bold capitalize w-[45%]">
-            what our happy clients say about us
-          </p>
-          <p className="w-[50%] text-sm">
-            {`I've been a member of Fitness Within for about 6 months now and i
+          <div className="flex place-items-center justify-center gap-8 cursor-pointer">
+            {pricingData.map((pricing) => (
+              <section
+                key={pricing.id}
+                className={`flex flex-col gap-8 ${
+                  pricing.id === 2 ? "bg-orange" : "bg-fadish-brown"
+                } px-20 py-8 rounded-lg`}
+              >
+                <p className="text-center uppercase text-base">
+                  {pricing.title}
+                </p>
+                <label className="font-bold text-[32px] flex place-items-center gap-1">
+                  ${" "}
+                  {currentUsage === "monthly"
+                    ? pricing.price
+                    : pricing.price * 12}
+                  <p className="font-normal text-base">/ {pricing.usage}</p>
+                </label>
+                <div className="flex flex-col gap-4">
+                  {pricing.content.map((content, index) => (
+                    <section
+                      key={index}
+                      className="flex place-items-center gap-2"
+                    >
+                      <Icon icon="charm:tick" width={28} fontSize={24} />
+                      <p className="text-sm text-start">{content}</p>
+                    </section>
+                  ))}
+                </div>
+                <button
+                  className={`border border-white rounded-full ${
+                    pricing.id === 2 ? "bg-white text-orange" : ""
+                  } p-3 capitalize`}
+                >
+                  choose plan
+                </button>
+              </section>
+            ))}
+          </div>
+        </section>
+
+        <section className="flex justify-between relative">
+          <div className="flex flex-col gap-6 ">
+            <p className="text-[32px] font-bold capitalize w-[45%]">
+              what our happy clients say about us
+            </p>
+            <p className="w-[50%] text-sm">
+              {`I've been a member of Fitness Within for about 6 months now and i
             absolutely love it! The trainers are so motivate and they really
             help to reach fitness goals.`}
-          </p>
+            </p>
 
-          <div className="flex items-center gap-4 ">
-            <div className="flex -space-x-3">
-              {reviewers.map((reviewer) => (
-                <div
-                  key={reviewer.id}
-                  className="w-10 h-10   hover:translate-y-1 transition-transform relative"
+            <div className="flex items-center gap-4 ">
+              <div className="flex -space-x-3">
+                {reviewers.map((reviewer) => (
+                  <div
+                    key={reviewer.id}
+                    className="w-10 h-10   hover:translate-y-1 transition-transform relative"
+                  >
+                    <Image
+                      src={reviewer.image}
+                      className="rounded-full"
+                      fill
+                      alt={reviewer.name}
+                    />
+                  </div>
+                ))}
+                <button
+                  className="w-10 h-10 rounded-full bg-red  flex items-center justify-center text-white  hover:translate-y-1 transition-transform"
+                  aria-label="Add review"
                 >
-                  <Image
-                    src={reviewer.image}
-                    className="rounded-full"
-                    fill
-                    alt={reviewer.name}
-                  />
-                </div>
-              ))}
-              <button
-                className="w-10 h-10 rounded-full bg-red  flex items-center justify-center text-white  hover:translate-y-1 transition-transform"
-                aria-label="Add review"
-              >
-                <Icon icon="ic:baseline-plus" className="w-5 h-5" />
-              </button>
+                  <Icon icon="ic:baseline-plus" className="w-5 h-5" />
+                </button>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Icon
+                  icon="material-symbols:star"
+                  className="w-5 h-5  text-yellow"
+                />
+                <span className="text-white font-medium">4.9</span>
+                <span className="text-gray-400">(450 Reviews)</span>
+              </div>
             </div>
-            <div className="flex items-center gap-1.5">
-              <Icon
-                icon="material-symbols:star"
-                className="w-5 h-5  text-yellow"
+
+            <div className="w-[210px] h-[100px] relative">
+              <Image
+                src="/trustpilot.png"
+                alt="partners"
+                fill
+                className="object-cover"
               />
-              <span className="text-white font-medium">4.9</span>
-              <span className="text-gray-400">(450 Reviews)</span>
             </div>
           </div>
 
-          <div className="w-[210px] h-[100px] relative">
-            <Image
-              src="/trustpilot.png"
-              alt="partners"
-              fill
-              className="object-cover"
+          <div className="absolute left-1/2 bottom-2 transform -translate-x-1/2">
+            <section className="relative w-[200px] h-[150px]">
+              <Image src="/arrow.png" fill alt="arrow" />
+            </section>
+          </div>
+
+          <div className="w-[38%] relative">
+            <div
+              className="p-2 bg-fadish-grey rounded-full absolute top-36 -left-4 cursor-pointer"
+              onClick={prevTestimonial}
+            >
+              <Icon icon="solar:arrow-left-linear" />
+            </div>
+            <Testimonial
+              clientFeedback={testimonialData[currentIndex].clientFeedback}
+              clientImage={testimonialData[currentIndex].clientImage}
+              clientMoral={testimonialData[currentIndex].clientMoral}
+              clientName={testimonialData[currentIndex].clientName}
+              star={testimonialData[currentIndex].star}
             />
+            <div
+              className="p-2 bg-red rounded-full absolute top-36 -right-4 cursor-pointer"
+              onClick={nextTestimonial}
+            >
+              <Icon icon="mdi-light:arrow-right" />
+            </div>
           </div>
-        </div>
-
-        <div className="absolute left-1/2 bottom-2 transform -translate-x-1/2">
-          <section className="relative w-[200px] h-[150px]">
-            <Image src="/arrow.png" fill alt="arrow" />
-          </section>
-        </div>
-
-        <div className="w-[38%] relative">
-          <div
-            className="p-2 bg-fadish-grey rounded-full absolute top-36 -left-4 cursor-pointer"
-            onClick={prevTestimonial}
-          >
-            <Icon icon="solar:arrow-left-linear" />
-          </div>
-          <Testimonial
-            clientFeedback={testimonialData[currentIndex].clientFeedback}
-            clientImage={testimonialData[currentIndex].clientImage}
-            clientMoral={testimonialData[currentIndex].clientMoral}
-            clientName={testimonialData[currentIndex].clientName}
-            star={testimonialData[currentIndex].star}
-          />
-          <div
-            className="p-2 bg-red rounded-full absolute top-36 -right-4 cursor-pointer"
-            onClick={nextTestimonial}
-          >
-            <Icon icon="mdi-light:arrow-right" />
-          </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   );
 };
