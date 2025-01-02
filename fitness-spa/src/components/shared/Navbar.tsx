@@ -35,7 +35,7 @@ const navbarData = [
 export const Navbar = () => {
   const path = usePathname();
   return (
-    <div className="flex place-items-center justify-between py-6 px-14">
+    <div className="flex place-items-center justify-between py-6 px-28">
       <section
         id="logo"
         className="flex place-items-center gap-4 cursor-pointer"

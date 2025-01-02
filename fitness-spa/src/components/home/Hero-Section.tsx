@@ -14,7 +14,7 @@ const statsData = [
 
 export const HeroSection = () => {
   return (
-    <div className="flex place-items-center  py-6 px-14">
+    <div className="flex place-items-center  pt-6 px-28">
       <section className="flex flex-col gap-8">
         <div>
           <p className="uppercase text-[50px] w-[65%] font-bold">

@@ -1,6 +1,14 @@
-import { HeroGradient } from "@/components/home/Hero-Gradient";
-import { HeroSection } from "@/components/home/Hero-Section";
-import { Navbar } from "@/components/shared/Navbar";
+import {
+  Partners,
+  HeroGradient,
+  HeroSection,
+  Banner,
+  OurOfferring,
+  Reasoning,
+  Pricing,
+} from "@/components/home/";
+import { Navbar } from "@/components/shared/";
+import Footer from "@/components/shared/Footer";
 
 export default function Home() {
   return (
@@ -9,6 +17,12 @@ export default function Home() {
         <Navbar />
         <HeroSection />
       </HeroGradient>
+      <Partners />
+      <Banner />
+      <OurOfferring />
+      <Reasoning />
+      <Pricing />
+      <Footer />
     </div>
   );
 }
