@@ -14,12 +14,23 @@ const statsData = [
 
 export const HeroSection = () => {
   return (
-    <div className="flex place-items-center  pt-6 px-28">
+    <div className="flex place-items-center  pt-6 px-28 relative">
       <section className="flex flex-col gap-8">
-        <div>
-          <p className="uppercase text-[50px] w-[65%] font-bold">
-            get healthy body with the perfect exercises
+        <div className="relative">
+          <p className="uppercase text-[50px] w-[75%] font-bold">
+            get healthy body with the perfect
           </p>
+          <section className="flex  place-items-center  gap-6 uppercase text-[50px] w-[65%] font-bold">
+            Excersices
+            <div className="h-[40px] w-[280px]  relative">
+              <Image
+                src="/banner.jpg"
+                alt="banner"
+                fill
+                className="object-cover rounded-full"
+              />
+            </div>
+          </section>
         </div>
         <p className="w-[48%]">
           We are always there to help you to make a healthy body and mind
@@ -59,8 +70,35 @@ export const HeroSection = () => {
           ))}
         </div>
       </section>
+      <section className="absolute top-0 left-[620px]">
+        <Icon icon="gg:gym" className="text-fadish-brown" fontSize={80} />
+      </section>
       <section className="relative">
-        <Image src="/hero.png" alt="hero" width={880} height={630} />
+        <div className="flex flex-col gap-1 z-[99999] absolute bottom-16 p-3 bg-white rounded-lg">
+          <section className="">
+            <p className="text-black text-[10px]">Today's Calories </p>
+            <p className="text-black text-xl font-bold">150 Cal </p>
+          </section>
+          <section className="flex gap-5 place-items-center">
+            <div className="flex place-items-center gap-1">
+              <Icon
+                icon="material-symbols-light:trending-up"
+                fontSize={20}
+                className="text-red"
+              />
+              <p className="text-red text-[10px]">+2.75%</p>
+              <p className="text-black text-[10px]">This Week</p>
+            </div>
+            <Icon
+              icon="famicons:stats-chart"
+              className="text-red"
+              fontSize={40}
+            />
+          </section>
+        </div>
+        <div className="w-[580px] h-[630px]">
+          <Image src="/hero.png" alt="hero" fill className="" />
+        </div>
       </section>
     </div>
   );

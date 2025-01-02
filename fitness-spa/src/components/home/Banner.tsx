@@ -5,7 +5,7 @@ export const Banner = () => {
     <div className="flex place-items-center  gap-44 px-28 py-20 bg-fadish-dark">
       <section className="relative w-[450px] h-[320px]">
         <Image
-          src="/hero.jpg"
+          src="/banner.jpg"
           alt="hero"
           fill
           className="rounded-xl object-cover"
