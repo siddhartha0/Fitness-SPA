@@ -76,7 +76,7 @@ export const HeroSection = () => {
       <section className="relative">
         <div className="flex flex-col gap-1 z-[99999] absolute bottom-16 p-3 bg-white rounded-lg">
           <section className="">
-            <p className="text-black text-[10px]">Today's Calories </p>
+            <p className="text-black text-[10px]">{`Today's Calories`} </p>
             <p className="text-black text-xl font-bold">150 Cal </p>
           </section>
           <section className="flex gap-5 place-items-center">

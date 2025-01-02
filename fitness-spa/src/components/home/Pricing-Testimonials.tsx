@@ -116,8 +116,8 @@ export const Pricing = () => {
       <section className="flex flex-col gap-8 text-center">
         <p className="capitalize font-bold text-[32px]">choose the best plan</p>
         <p>
-          choose a plan that's right for your growing team. Simple pricing & No
-          hidden charges.
+          {`choose a plan that's right for your growing team. Simple pricing & No
+          hidden charges.`}
         </p>
 
         <div className="flex  text-center justify-center gap-4 border-2 border-darkish-red  w-fit  rounded-full m-auto ">
@@ -184,9 +184,9 @@ export const Pricing = () => {
             what our happy clients say about us
           </p>
           <p className="w-[50%] text-sm">
-            I've been a member of Fitness Within for about 6 months now and i
+            {`I've been a member of Fitness Within for about 6 months now and i
             absolutely love it! The trainers are so motivate and they really
-            help to reach fitness goals.
+            help to reach fitness goals.`}
           </p>
 
           <div className="flex items-center gap-4 ">

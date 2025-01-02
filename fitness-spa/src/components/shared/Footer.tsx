@@ -170,7 +170,7 @@ export const Footer = () => {
             <h3 className="text-xl font-semibold mb-6">Contact US</h3>
             <ul className="space-y-4">
               {footerData.contactLinks.map((contact) => (
-                <li className="flex items-start gap-2">
+                <li className="flex items-start gap-2" key={contact.id}>
                   <Icon icon={contact.icon} className="h-5 w-5 text-red mt-1" />
                   <span>
                     {contact.title}
